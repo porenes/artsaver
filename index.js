@@ -26,9 +26,9 @@ const puppeteer = require("puppeteer");
     { sa: 100, sp: 45, np: 6 },
     { sa: 100, sp: 55, np: 6 },
   ];
-  let i = 8;
-  for (let j = 0; j < 50; j++) {
-    let seed = Math.floor(100000 * Math.random());
+  let i = 12;
+  for (let j = 0; j < 500; j++) {
+    let seed = Math.floor(1000000 * Math.random());
     console.log(seed);
 
     const browser = await puppeteer.launch({
@@ -39,7 +39,7 @@ const puppeteer = require("puppeteer");
     console.log(`building example-${seed}.png`);
     try {
       await page.goto(
-        `http://127.0.0.1:5500/?seed=${seed}`,
+        `http://127.0.0.1:5500/?seed=${seed}&debug=true`,
         // "https://gateway.fxhash.xyz/ipfs/QmaN4onnUgFs2eDsriy2ns82jWMYm8ZnPHrbSkh5LmEfkP/?fxhash=op4QY7XrvdA7XzvXCw36L9kXhrZ5E4Fr4RPb79cHgC1NYmvx5XW",
         {
           waitUntil: "networkidle2",
