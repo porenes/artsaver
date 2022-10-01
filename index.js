@@ -10,7 +10,7 @@ const puppeteer = require("puppeteer");
     timeout: 60000,
   });
   const page = await browser.newPage();
-  for (let j = 0; j < 500; j++) {
+  for (let j = 0; j < 999; j++) {
     let alphabet = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
     var fxhash =
       "oo" +
@@ -33,9 +33,9 @@ const puppeteer = require("puppeteer");
     } catch (error) {
       console.error(error);
     }
-    await page.$("canvas#defaultCanvas0");
+    // await page.$("canvas#defaultCanvas0");
     await page.screenshot({
-      path: `./output/example-${j}-${seed}.png`,
+      path: `./output/example-${j}-${fxhash}.png`,
     });
     // await page.reload();
   }
